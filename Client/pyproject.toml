@@ -1,5 +1,5 @@
 [project]
-name = "Client"
+name = "rps-engine-client-python"
 version = "1.0.0"
 description = "Python client library for REGDATA RPS Engine."
 authors = [
@@ -28,6 +28,9 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 package-mode = true
+packages = [
+    { include = "Client" }
+]
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.5"

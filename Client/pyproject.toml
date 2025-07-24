@@ -1,5 +1,5 @@
 [project]
-name = "Client"
+name = "rps-engine-client-python"
 version = "1.0.0"
 description = "Python client library for REGDATA RPS Engine."
 authors = [

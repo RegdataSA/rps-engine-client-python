@@ -1,6 +1,7 @@
 import os
 from typing import Tuple, Type
 from pydantic_settings import BaseSettings, JsonConfigSettingsSource, PydanticBaseSettingsSource, SettingsConfigDict
+from Client.constants import configDirectory
 from Client.engine_context.processing_context import ProcessingContext
 from Client.engine_context.rights_context import RightsContext
 from Client.model.settings.rps_settings import RPSSettings
@@ -19,15 +20,13 @@ class Settings(BaseSettings):
         external_source_files (FilesSettings): Settings for external source files, if any.
     """
     rps: RPSSettings
-    rights_contexts: dict[str, RightsContext] = None
-    processing_contexts: dict[str, ProcessingContext] = None
-    external_source_files: FilesSettings = None
-
+    rights_contexts: dict[str, RightsContext] | None = None
+    processing_contexts: dict[str, ProcessingContext] | None = None
+    external_source_files: FilesSettings | None = None
+    
     model_config = SettingsConfigDict(
-        env_file=os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")), ".env"),
-        json_file=[
-            os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")), "settings.json"),
-        ],
+        env_file=os.path.join(configDirectory, ".env"),
+        json_file=[os.path.join(configDirectory, "settings.json")],
         env_nested_delimiter="__",
         nested_model_default_partial_update=True,
     )

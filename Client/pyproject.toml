@@ -1,6 +1,6 @@
 [project]
 name = "rps-engine-client-python"
-version = "1.0.0"
+version = "1.0.1"
 description = "Python client library for REGDATA RPS Engine."
 authors = [
     { name = "REGDATA SA", email = "info@regdata.ch" }

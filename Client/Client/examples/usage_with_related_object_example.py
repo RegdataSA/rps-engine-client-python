@@ -1,7 +1,7 @@
 """Example of usage of Protection of RPSValues received from external file"""
 import os
+from Client.engine.engine_factory import EngineFactory
 from Client.instance.rps_instance import RPSInstance
-from Client.examples.engine_factory import EngineFactory
 from Client.extensions.json_extensions import get_json_from_file
 from Client.request_context import RequestContext
 from Client.value.rps_value import RPSValue

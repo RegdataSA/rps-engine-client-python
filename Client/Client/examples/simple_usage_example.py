@@ -1,9 +1,9 @@
 """Simple example of usage of Protection and Deprotection of few RPSValues."""
+from Client.engine.engine_factory import EngineFactory
 from Client.instance.rps_instance import RPSInstance
 from Client.engine_context.processing_context import ProcessingContext
 from Client.engine_context.rights_context import RightsContext
 from Client.evidence import Evidence
-from Client.examples.engine_factory import EngineFactory
 from Client.request_context import RequestContext
 from Client.value.rps_value import RPSValue
 

@@ -1,6 +1,6 @@
 """Example of usage of Protection of RPSValues with Dependencies"""
 from Client.instance.rps_instance import RPSInstance
-from Client.examples.engine_factory import EngineFactory
+from Client.engine.engine_factory import EngineFactory
 from Client.value.rps_value import RPSValue
 
 

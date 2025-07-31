@@ -1,7 +1,7 @@
 """Example of usage of Protection and Deprotection of few RPSValues,
 using the contexts name instead of objects"""
 from Client.instance.rps_instance import RPSInstance
-from Client.examples.engine_factory import EngineFactory
+from Client.engine.engine_factory import EngineFactory
 from Client.request_context import RequestContext
 from Client.value.rps_value import RPSValue
 

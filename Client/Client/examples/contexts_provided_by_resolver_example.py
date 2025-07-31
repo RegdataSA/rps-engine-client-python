@@ -21,9 +21,9 @@ class ContextsProvidedByResolverExample:
         raw_last_name = RPSValue(instance=RPSInstance(className='User', propertyName='City'), originalValue='Silverhand')
         raw_birth_date = RPSValue(instance=RPSInstance(className='User', propertyName='Date'), originalValue='1998-11-16')
 
-        protected_first_name = RPSValue(instance=RPSInstance(className='User', propertyName='Name'), originalValue='RG{Cx42R8B8O-AB}')
-        protected_last_name = RPSValue(instance=RPSInstance(className='User', propertyName='City'), originalValue='RG{Lx5GNXG5M-AB}')
-        protected_birth_date = RPSValue(instance=RPSInstance(className='User', propertyName='Date'), originalValue='7688-12-23')
+        protected_first_name = RPSValue(instance=RPSInstance(className='User', propertyName='Name'), originalValue='XXXXXXXX')
+        protected_last_name = RPSValue(instance=RPSInstance(className='User', propertyName='City'), originalValue='XXXXXXXX')
+        protected_birth_date = RPSValue(instance=RPSInstance(className='User', propertyName='Date'), originalValue='XXXXXXXX')
 
         # Protect Request
         protect_request_context: RequestContext = __engine.create_context().with_request_by_context_names(

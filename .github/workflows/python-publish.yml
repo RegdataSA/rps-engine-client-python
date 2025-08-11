@@ -45,6 +45,10 @@ jobs:
       - name: Check Git tags
         run: git tag
         working-directory: Client
+
+      - name: Poetry Plugin List
+        run: poetry self show plugins
+        working-directory: Client
         
       - name: Build package
         run: poetry build

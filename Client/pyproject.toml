@@ -1,6 +1,5 @@
 [project]
 name = "rps-engine-client-python"
-version = "1.0.3"
 description = "Python client library for REGDATA RPS Engine."
 authors = [
     { name = "REGDATA SA", email = "info@regdata.ch" }
@@ -31,6 +30,9 @@ package-mode = true
 packages = [
     { include = "Client" }
 ]
+
+[tool.poetry-dynamic-versioning]
+enable = true
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.5"

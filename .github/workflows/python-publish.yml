@@ -35,6 +35,7 @@ jobs:
 
       - name: Build package
         run: poetry build
+        working-directory: /home/runner/work/rps-engine-client-python/Client
         
       - name: Publish package to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1

@@ -36,6 +36,7 @@ jobs:
 
       - name: Build package
         run: poetry build
+        working-directory: Client
         
       - name: Publish package to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1

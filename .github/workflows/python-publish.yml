@@ -27,6 +27,10 @@ jobs:
         with:
           fetch-depth: 0
           fetch-tags: true
+          
+      - name: Symlink .git for Poetry versioning
+        run: ln -s ../.git .git
+        working-directory: Client
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -49,10 +53,6 @@ jobs:
       - name: Poetry Plugin List
         run: poetry -C Client self show plugins
         # working-directory: Client
-
-      - name: Poetry Debug Version
-        run: poetry version
-        working-directory: Client
 
       - name: Build package
         run: poetry -C Client build

@@ -55,7 +55,7 @@ jobs:
       - name: Build package
         run: poetry build
 
-      - name: Move dist to root (if needed)
+      - name: Move dist to root
         run: mv Client/dist ./dist
         
       - name: Publish package to PyPI

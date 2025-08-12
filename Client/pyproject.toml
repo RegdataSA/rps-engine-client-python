@@ -6,7 +6,7 @@ authors = [ "REGDATA SA <info@regdata.ch>" ]
 license = "REGDATA SA"
 readme = "README.md"
 packages = [
-    { include = "Client" }
+    { include = "." }
 ]
 
 [tool.poetry.dependencies]

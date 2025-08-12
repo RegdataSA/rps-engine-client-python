@@ -19,7 +19,7 @@ jobs:
       id-token: write
     environment:
       name: pypi
-      url: https://pypi.org/project/rps-engine-client-python/
+      # url: https://pypi.org/project/rps-engine-client-python/
       
     steps:
       - name: Checkout code

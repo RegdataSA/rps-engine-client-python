@@ -53,7 +53,7 @@ jobs:
       #   # working-directory: Client
 
       - name: Build package
-        run: poetry -C Client build
+        run: poetry build
 
       - name: Move dist to root
         run: mv Client/dist ./dist

@@ -6,14 +6,14 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Setup, Build and Publish Python package
+name: Build and Publish Python package
 
 on:
   release:
     types: [published]
 
 jobs:
-  setup:
+  build:
     runs-on: ubuntu-latest
     permissions:
       id-token: write
@@ -42,11 +42,6 @@ jobs:
         run: poetry install
         working-directory: Client
 
-  build:
-    needs: setup
-    runs-on: ubuntu-latest
-
-    steps:
       - name: Check Git tags
         run: git tag
 

@@ -19,7 +19,7 @@ jobs:
       id-token: write
     environment:
       name: pypi
-      # url: https://pypi.org/project/rps-engine-client-python/
+      url: https://pypi.org/project/rps-engine-client-python/
       
     steps:
       - name: Checkout code
@@ -28,9 +28,6 @@ jobs:
           fetch-depth: 0
           fetch-tags: true
           
-      # - name: Symlink .git for Poetry versioning
-      #   run: ln -s ../.git .git
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -57,6 +54,7 @@ jobs:
 
       - name: Build package
         run: poetry build
+        
       # - name: Move dist to root (if needed)
       #   run: mv Client/dist ./dist
         

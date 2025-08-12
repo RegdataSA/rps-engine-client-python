@@ -50,6 +50,10 @@ jobs:
         run: poetry -C Client self show plugins
         # working-directory: Client
 
+      - name: Poetry Debug Version
+        run: poetry version
+        working-directory: Client
+
       - name: Build package
         run: poetry -C Client build
 

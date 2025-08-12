@@ -28,9 +28,8 @@ jobs:
           fetch-depth: 0
           fetch-tags: true
           
-      - name: Symlink .git for Poetry versioning
-        run: ln -s ../.git .git
-        working-directory: Client
+      # - name: Symlink .git for Poetry versioning
+      #   run: ln -s ../.git .git
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -43,7 +42,8 @@ jobs:
           pip install poetry poetry-dynamic-versioning
 
       - name: Install dependencies
-        run: poetry install --directory Client
+        run: poetry install
+        # run: poetry install --directory Client
         # working-directory: Client
 
       - name: Check Git tags
@@ -51,14 +51,14 @@ jobs:
         # working-directory: Client
 
       - name: Poetry Plugin List
-        run: poetry -C Client self show plugins
+        run: poetry self show plugins
+        # run: poetry -C Client self show plugins
         # working-directory: Client
 
       - name: Build package
-        run: poetry -C Client build
-
-      - name: Move dist to root (if needed)
-        run: mv Client/dist ./dist
+        run: poetry build
+      # - name: Move dist to root (if needed)
+      #   run: mv Client/dist ./dist
         
       - name: Publish package to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1

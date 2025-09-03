@@ -36,7 +36,7 @@ The default location of the configuration file is the root project folder. If a 
  ```powershell
 $env:RPS_CLIENT_CONFIG_DIR = "path/to/config_folder"
 ```
-- Remove file location:
+- Removing the configured file location, to use default location:
  ```powershell
 Remove-Item Env:RPS_CLIENT_CONFIG_DIR
 ```

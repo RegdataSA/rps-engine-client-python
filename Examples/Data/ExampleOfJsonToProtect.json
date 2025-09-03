@@ -1,4 +1,8 @@
 {
-    "Name": "Jonny",
-    "Date": "3010-10-01"
+    "FirstName": "Jonny",
+    "LastName": "Silverhand",
+    "Email": "test@example.com",
+    "Phone": "123-456-7890",
+    "ISIN":"DE1234567890",
+    "BirthDate": "3010-10-01"
 }

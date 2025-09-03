@@ -1,5 +1,6 @@
 """Example of usage of Protection of RPSValues received from external file"""
 import os
+from Client.context_source import ContextSource
 from Client.engine.engine_factory import EngineFactory
 from Client.instance.rps_instance import RPSInstance
 from Client.extensions.json_extensions import get_json_from_file
@@ -11,7 +12,7 @@ class UsageWithRelatedObjectExample:
     """Example of Protection of RPSValues received from external file,
     and printing results from RPS Engine
     """
-    __engine = EngineFactory.get_engine()
+    __engine = EngineFactory.get_engine(context_source=ContextSource.JSON)
     
     __example_json_file_path = os.path.join(
         os.path.dirname(__file__),
@@ -38,8 +39,8 @@ class UsageWithRelatedObjectExample:
         # Protect Request
         request_context: RequestContext = __engine.create_context().with_request_by_context_names(
             rps_values=rps_values,
-            rights_context_name="TransformRegTAX",
-            processing_context_name="ProtectRegTAX")
+            rights_context_name="Admin",
+            processing_context_name="Protect")
 
         request_context.transform_async()
 

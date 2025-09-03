@@ -1,4 +1,5 @@
 """Simple example of usage of Protection and Deprotection of few RPSValues."""
+from Client.context_source import ContextSource
 from Client.engine.engine_factory import EngineFactory
 from Client.instance.rps_instance import RPSInstance
 from Client.engine_context.processing_context import ProcessingContext
@@ -12,7 +13,7 @@ class SimpleUsageExample:
     """Simple example of Protection and Deprotection and
      printing results from RPS Engine
     """
-    __engine = EngineFactory.get_engine()
+    __engine = EngineFactory.get_engine(context_source=ContextSource.JSON)
 
     if __name__ == "__main__":
 

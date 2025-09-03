@@ -1,4 +1,5 @@
 """Example of usage of Protection of RPSValues with Dependencies"""
+from Client.context_source import ContextSource
 from Client.instance.rps_instance import RPSInstance
 from Client.engine.engine_factory import EngineFactory
 from Client.value.rps_value import RPSValue
@@ -8,13 +9,13 @@ class UsageWithDependenciesExample:
     """Example of Protection of RPSValues with Dependencies,
     and printing results  from RPS Engine"""
 
-    __engine = EngineFactory.get_engine()
+    __engine = EngineFactory.get_engine(context_source=ContextSource.JSON)
 
     if __name__ == "__main__":
 
         print('--- Example of protection with dependencies ---')
 
-        # Create RPS Value with dependency
+        # Create RPS Value with dependency - see https://demo.rpsprod.ch/community/library/rps-value
         payment_date = RPSValue(instance=RPSInstance(className='Payment', propertyName='Date'),
                                 originalValue='02.11.2021',
                                 dependencies={

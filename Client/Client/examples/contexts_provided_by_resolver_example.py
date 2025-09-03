@@ -1,5 +1,6 @@
 """Example of usage of Protection and Deprotection of few RPSValues,
 using the contexts name instead of objects"""
+from Client.context_source import ContextSource
 from Client.instance.rps_instance import RPSInstance
 from Client.engine.engine_factory import EngineFactory
 from Client.request_context import RequestContext
@@ -11,7 +12,7 @@ class ContextsProvidedByResolverExample:
     and printing results from RPS Engine
     """
 
-    __engine = EngineFactory.get_engine()
+    __engine = EngineFactory.get_engine(context_source=ContextSource.JSON)
 
     if __name__ == "__main__":
 

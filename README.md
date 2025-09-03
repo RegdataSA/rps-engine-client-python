@@ -68,7 +68,8 @@ Must be a valid JSON syntax for more complex or nested configuration. Using doub
     "clientSecret": "YOUR_CLIENT_SECRET",
     "timeout": 30
   },
-  // Specify either the "external_source_files" section or the "rights_contexts" & "processing_contexts", according to the contexts source
+  // Specify either the "external_source_files" section -> `ContextSource.JSON` 
+  // Or the "rights_contexts" & "processing_contexts" sections -> `ContextSource.SETTINGS`
   "external_source_files": {
     "rightsContextsFilePath": "path/to/rights_contexts.json",
     "processingContextsFilePath": "path/to/processing_contexts.json"
@@ -108,18 +109,17 @@ rps__clientId="YOUR_CLIENT_ID"
 rps__clientSecret="YOUR_CLIENT_SECRET"
 rps__timeout=30
 
-// One of the followings:
+// One of the followings, `ContextSource.JSON`
 external_source_files__rightsContextsFilePath=path/to/rights_contexts.json
 external_source_files__processingContextsFilePath=path/to/processing_contexts.json
 
-// OR
+// or `ContextSource.SETTINGS`
 rights_contexts__Admin__evidences__0__name="Role"
 rights_contexts__Admin__evidences__0__value="Admin"
-
-processing_contexts__Protect__evidences__0__name=Action
-processing_contexts__Protect__evidences__0__value=Protect
-processing_contexts__Deprotect__evidences__0__name=Action
-processing_contexts__Deprotect__evidences__0__value=Deprotect
+processing_contexts__Protect__evidences__0__name="Action"
+processing_contexts__Protect__evidences__0__value="Protect"
+processing_contexts__Deprotect__evidences__0__name="Action"
+processing_contexts__Deprotect__evidences__0__value="Deprotect"
 ```
 
 ## Examples of usage
@@ -127,24 +127,22 @@ processing_contexts__Deprotect__evidences__0__value=Deprotect
 The examples folder contains several ready-to-run scripts that demonstrate different usage scenarios of the RPS Engine client. Each example is designed to help you understand how to configure, invoke, and extend the client for your own use cases. Below is a brief explanation of each example:
 
 - [`SimpleUsageExample`](Client/Client/examples/simple_usage_example.py)
-Demonstrates the most basic workflow: manually creating rights and processing contexts, constructing RPSValue objects, and performing protection and deprotection operations. This is a good starting point for understanding the core API and data flow.
+demonstrates the most basic workflow: manually creating rights and processing contexts, constructing RPSValue objects, and performing protection and deprotection operations. This is a good starting point for understanding the core API and data flow.
 
 - [`ContextsProvidedByResolverExample`](Client/Client/examples/contexts_provided_by_resolver_example.py)
-shows how to use context names instead of full context objects. The example leverages the context resolver to fetch rights and processing contexts by name, simplifying the request construction process.
+shows how to use context names instead of full context objects. The example leverages the context resolver to fetch rights and processing contexts by their names, simplifying the request construction process.
 
 - [`UsageWithDependenciesExample`](Client/Client/examples/usage_with_dependencies_example.py)
-Illustrates how to handle RPSValue objects that have dependencies (such as minimum or maximum values). This is useful for scenarios where the transformation logic depends on related data fields.
+illustrates how to handle RPSValue objects that have dependencies (such as minimum or maximum values). This is useful for scenarios where the transformation logic depends on related data fields.
 
 - [`UsageWithRelatedObjectExample`](Client/Client/examples/usage_with_related_object_example.py)
-Demonstrates how to load data from an external JSON file, convert it into RPSValue objects, and perform protection operations. This example is ideal for batch processing or integrating with external data sources.
+demonstrates how to load data from an external JSON file, convert it into RPSValue objects, and perform protection operations. This example is ideal for batch processing or integrating with external data sources.
 
 **Each example is self-contained and can be run directly.** Review and adapt these scripts to accelerate your own integration with the RPS Platform.
 
 ```powershell
 poetry run python client/examples/usage_with_related_object_example.py
 ```
----
-
 
 # Contribute
 To add libraries update the **dependencies** section in the ``pyproject.toml`` 
@@ -165,3 +163,6 @@ To install the dependencies update the peotry.lock with poetry
 ```
 poetry lock
 ```
+
+# Additional Resources
+See [REGDATA RPS Community](https://demo.rpsprod.ch/community/platform) for further integrations and documentation.
